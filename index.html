@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Hosting</title>
+    <title>Image Display</title>
     <style>
         body {
             background-color: black; /* Set background to pure black */
-            color: white; /* Make text visible */
-            text-align: center; /* Center content */
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
         }
         img {
-            width: 100%; /* Make image responsive */
-            max-width: 800px; /* Limit maximum size */
-            height: auto; /* Maintain aspect ratio lol*/
-            display: block;
-            margin: 20px auto; /* Center image */
+            max-width: 100%; /* Ensure image does not overflow horizontally */
+            max-height: 100%; /* Ensure image does not overflow vertically */
+            object-fit: contain; /* Maintain aspect ratio and center the image */
         }
     </style>
 </head>
 <body>
-    <h1>My Website</h1>
-    <!-- Online hosting image -->
-    <img src="https://raw.githubusercontent.com/pablothinghouse/InNewWindowsSite/main/BG.png" alt="My Hosted Image">
+    <!-- Centered and scaled image -->
+    <img src="https://raw.githubusercontent.com/pablothinghouse/InNewWindowsSite/main/BG.png" alt="Centered Image">
 </body>
 </html>

@@ -1,229 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>In New Windows</title>
-    <link rel="icon" type="image/webp" href="assets/icons/icon.webp">
-    <link rel="alternate icon" type="image/x-icon" href="assets/icons/icon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/pablothinghouse/InNewWindowsSite/refs/heads/main/favicon.ico" type="image/x-icon">
     <style>
-        @font-face {
-            font-family: 'Compacta BT';
-            src: url('fonts/CompactaBT-Black.otf') format('opentype');
-        }
-
         body {
+            background-color: black; 
             margin: 0;
-            min-height: 100vh;
-            background: black;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Compacta BT', Arial, sans-serif;
+            height: 100vh; /* Full viewport height */
         }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-            opacity: 0;
-            animation: fadeIn 0.5s ease-in forwards;
-            padding-bottom: 1rem;
-        }
-
-        .main-image {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 2rem;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 800px;
-            padding-left: 1rem;
-        }
-
-        .button {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .buttons:first-of-type .button {
-            flex: 1;
-        }
-
-        .buttons:last-of-type .button {
-            flex: 1;
-        }
-
-        .button .icon {
-            width: auto;
-            height: 3rem;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .button-text {
-            flex: 1;
-            background: white;
-            color: black;
-            padding: 0.5rem 1rem;
-            font-size: 1.8rem;
-            font-weight: 100;
-            letter-spacing: 0.05em;
-            transform: scaleX(0.8);
-            text-align: center;
-        }
-
-        .button-text span {
-            font-size: 1.4rem;
-            color: #444;
-            font-weight: lighter;
-        }
-
-        .button:hover {
-            transform: scale(1.01);
-            filter: brightness(1.1);
-        }
-
-        .button:hover .button-text {
-            background: #f0f0f0;
-        }
-
-        .button:hover .icon {
-            color: #eee;
-        }
-
-        .button:hover img.icon {
-            opacity: 0.9;
-            filter: none;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                width: 100%;
-                padding: 2rem;
-                min-height: 100vh;
-                justify-content: space-between;
-            }
-
-            .main-image {
-                width: 100%;
-            }
-
-            .buttons {
-                flex-direction: column;
-                align-items: center;
-                width: 95%;
-                gap: 1rem;
-                padding-left: 2rem;
-                padding-right: 1rem;
-            }
-
-            .buttons:first-of-type .button,
-            .buttons:last-of-type .button {
-                width: 100%;
-                max-width: 500px;
-            }
-        }
-
-        .button img.icon {
-            width: auto;
-            height: 3rem;
-            filter: brightness(1);
-            object-fit: contain;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-
-        .outdated-text {
-            color: gray;
-            font-size: 1.2rem;
-            margin-top: -1rem;
-            align-self: flex-end;
-            margin-right: 5.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .outdated-text {
-                align-self: center;
-                margin-right: 0;
-            }
-        }
-
-        .wip-text {
-            color: #666;
-            font-size: 1rem;
-            text-align: center;
-            width: 100%;
-            padding: 0.5rem 0;
-            position: fixed;
-            bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .wip-text {
-                position: static;
-                margin-top: auto;
-            }
-        }
-
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            flex: 1;
-        }
-
-        @media (max-width: 768px) {
-            .button-container {
-                align-items: center;
-                width: 100%;
-            }
+        img {
+            max-width: 100%; /* Ensure image does not overflow horizontally */
+            max-height: 100%; /* Ensure image does not overflow vertically */
+            object-fit: contain; /* Maintain aspect ratio and center the image */
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <img class="main-image" src="assets/InNewWindows.webp" alt="In New Windows">
-        <div class="buttons">
-            <a href="https://x.com/innewwindows" class="button">
-                <i class="fa-brands fa-twitter icon"></i>
-                <div class="button-text">Twitter</div>
-            </a>
-            <a href="https://bsky.app/profile/innewwindows.com" class="button">
-                <i class="fa-brands fa-bluesky icon"></i>
-                <div class="button-text">BlueSky</div>
-            </a>
-            <a href="https://innewwindows.newgrounds.com" class="button">
-                <img class="icon" src="assets/icons/newgrounds.webp" alt="NewGrounds">
-                <div class="button-text">NewGrounds</div>
-            </a>
-        </div>
-        <div class="buttons">
-            <a href="https://store.steampowered.com/app/2574350/Speedin_Shotgun/" class="button">
-                <i class="fa-brands fa-steam icon"></i>
-                <div class="button-text">Speedin' Shotgun <span>(Steam)</span></div>
-            </a>
-            <a href="https://nonagonn.itch.io/speedin-shotgun" class="button">
-                <i class="fa-brands fa-itch-io icon"></i>
-                <div class="button-text">Speedin' Shotgun <span>(Itch.io)</span></div>
-            </a>
-        </div>
-        <div class="outdated-text">^super outdated.</div>
-        <div class="wip-text">!!!! THIS WEBSITE IS A WORK IN PROGRESS GRAAHHH !!!!</div>
-    </div>
+    <!-- Centered and scaled image -->
+    <img src="https://raw.githubusercontent.com/pablothinghouse/InNewWindowsSite/main/BG.png" alt="Centered Image">
 </body>
-</html> 
+</html>

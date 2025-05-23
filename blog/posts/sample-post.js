@@ -1,7 +1,7 @@
 window.blogPosts = window.blogPosts || [];
 window.blogPosts.push({
-    title: "sample post",
-    date: "2026-01-20",
+    title: "Speedin' Shotgun Progress Update #1",
+    date: "2025-05-27",
     content: `## John Sound
 
 here is my audio

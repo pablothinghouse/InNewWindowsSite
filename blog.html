@@ -11,6 +11,11 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="navigation/navigation.js"></script>
+
+    <!-- ADD BLOG POST FILENAMES HERE ---------------------------- -->
+    <script src="blog/posts/sample-post.js"></script>
+    <script src="blog/posts/blog.js"></script>
+
     <style>
         @font-face {
             font-family: 'Compacta BT';
@@ -188,64 +193,17 @@
         class BlogLoader {
             constructor() {
                 this.postsContainer = document.getElementById('blog-posts');
-                this.posts = [];
-                this.postFiles = [
-                    'sample-post1.md',
-                    'blog1.md'
-                ];
             }
 
-            async loadPosts() {
-                for (const filename of this.postFiles) {
-                    try {
-                        const response = await fetch(`blog/posts/${filename}`);
-                        if (response.ok) {
-                            const content = await response.text();
-                            const post = this.parsePost(content, filename);
-                            if (post) {
-                                this.posts.push(post);
-                            }
-                        }
-                    } catch (error) {
-                        console.warn(`Could not load post: ${filename}`, error);
-                    }
-                }
-
-                this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-                this.renderPosts();
-            }
-
-            parsePost(content, filename) {
-                const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-                const match = content.match(frontmatterRegex);
+            loadPosts() {
+                const posts = (window.blogPosts || []).map(post => ({
+                    ...post,
+                    date: new Date(post.date + 'T12:00:00'),
+                    content: marked.parse(this.processMediaReferences(post.content))
+                }));
                 
-                if (!match) {
-                    console.warn(`Invalid post format in ${filename}. Expected YAML frontmatter.`);
-                    return null;
-                }
-
-                try {
-                    const frontmatter = jsyaml.load(match[1]);
-                    const markdownContent = match[2];
-                    
-                    if (!frontmatter.title || !frontmatter.date) {
-                        console.warn(`Missing required fields (title, date) in ${filename}`);
-                        return null;
-                    }
-
-                    const processedContent = this.processMediaReferences(markdownContent);
-                    const htmlContent = marked.parse(processedContent);
-
-                    return {
-                        title: frontmatter.title,
-                        date: new Date(frontmatter.date + 'T12:00:00'),
-                        content: htmlContent,
-                        filename: filename
-                    };
-                } catch (error) {
-                    console.error(`Error parsing ${filename}:`, error);
-                    return null;
-                }
+                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                this.renderPosts(posts);
             }
 
             processMediaReferences(content) {
@@ -260,15 +218,15 @@
                 return content;
             }
 
-            renderPosts() {
-                if (this.posts.length === 0) {
+            renderPosts(posts) {
+                if (posts.length === 0) {
                     this.postsContainer.innerHTML = '<div class="no-posts">blog coming soon</div>';
                     return;
                 }
 
                 this.postsContainer.innerHTML = '';
                 
-                this.posts.forEach((post, index) => {
+                posts.forEach((post, index) => {
                     const postElement = document.createElement('article');
                     postElement.className = 'blog-post';
                     

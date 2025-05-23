@@ -22,18 +22,19 @@ Wait wait wait! Before you give me a columbian necktie and feed me to the buzzar
 
 There are MANY. I'll go over them!
 
-The original project file is TWO YEARS OLD. ( I have progressed as developer significantly since then. )
+-The original project file is TWO YEARS OLD. ( I have progressed as developer significantly since then. )
 
-The current codebase isn't modular at all and very hard to work with.
+-The current codebase isn't modular at all and very hard to work with.
 
-Implementing controller support in this project file is tedious. Very tedious.
+-Implementing controller support in this project file is tedious. Very tedious.
 
-A lot of assets were outdated, and needed a rehaul anyways.
+-A lot of assets were outdated, and needed a rehaul anyways.
 
-The Level Editor's main script is about 1.5k lines long. I cannot deal with this shit anymore.
+-The Level Editor's main script is about 1.5k lines long. I cannot deal with this shit anymore.
 
 
-Now, with the NEW project file;
+
+Now, with the *NEW* project file;
 
 Fresh start. I am a MUCH better developer now.
 
@@ -41,8 +42,10 @@ The new codebase can be developed to be modular and easy to work with. ( Signifi
 
 Controller support has already been implemented. See for yourself!
 
-[IMG:controllersupport.gif]
-..Ignore the visuals. Temporary.
+[IMG:controller.gif]
+..Ignore the visuals. T-They're temporary... Joe will be back soon.
+[IMG:myson.png]
+..Isn't he beautiful?
 
 Assets can be rehauled and replaced easily.
 
@@ -74,5 +77,10 @@ I would share more, but we're going through an overhaul right now. Come back lat
 
 ## End
 
-2 years huh? I can't wait to be done with this shit.`
+2 years huh? I can't wait to be done with this shit.
+
+[IMG:update1end.png]
+
+END
+`
 }); 

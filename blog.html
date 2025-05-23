@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In New Windows - Blog</title>
+    <link rel="icon" type="image/webp" href="assets/icons/icon.webp">
+    <link rel="alternate icon" type="image/x-icon" href="assets/icons/icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="navigation/navigation.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="navigation/navigation.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Compacta BT';
+            src: url('fonts/CompactaBT-Black.otf') format('opentype');
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background: black;
+            font-family: 'Compacta BT', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .blog-post {
+            background: #111;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        .post-title {
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+            color: white;
+            font-weight: bold;
+        }
+
+        .post-date {
+            color: #888;
+            font-size: 1rem;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .post-content {
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        .post-content h1, .post-content h2, .post-content h3 {
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .post-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.3rem;
+        }
+
+        .post-content p {
+            margin: 1rem 0;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            max-height: 400px;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+            display: block;
+            object-fit: cover;
+        }
+
+        .post-content audio {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .post-content a {
+            color: #4a9eff;
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content code {
+            background: #222;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .post-content pre {
+            background: #222;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .post-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid #4a9eff;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            color: #bbb;
+        }
+
+        .loading {
+            text-align: center;
+            color: #888;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .no-posts {
+            text-align: center;
+            color: #888;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .blog-post {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+
+            .post-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html">
+            <img class="nav-logo" src="assets/InNewWindows.webp" alt="In New Windows">
+        </a>
+        <div class="nav-buttons">
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="blog-posts">
+        </div>
+    </div>
+
+    <script>
+        class BlogLoader {
+            constructor() {
+                this.postsContainer = document.getElementById('blog-posts');
+                this.posts = [];
+            }
+
+            async loadPostsList() {
+                try {
+                    const response = await fetch('blog/posts/posts.txt');
+                    if (response.ok) {
+                        const content = await response.text();
+                        return content.trim().split('\n').filter(line => line.trim() !== '');
+                    }
+                } catch (error) {
+                    console.error('Could not load posts list:', error);
+                }
+                return [];
+            }
+
+            async loadPosts() {
+                const postFiles = await this.loadPostsList();
+                
+                for (const filename of postFiles) {
+                    try {
+                        const response = await fetch(`blog/posts/${filename.trim()}`);
+                        if (response.ok) {
+                            const content = await response.text();
+                            const post = this.parsePost(content, filename);
+                            if (post) {
+                                this.posts.push(post);
+                            }
+                        }
+                    } catch (error) {
+                        console.warn(`Could not load post: ${filename}`, error);
+                    }
+                }
+
+                this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                this.renderPosts();
+            }
+
+            parsePost(content, filename) {
+                const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+                const match = content.match(frontmatterRegex);
+                
+                if (!match) {
+                    console.warn(`Invalid post format in ${filename}. Expected YAML frontmatter.`);
+                    return null;
+                }
+
+                try {
+                    const frontmatter = jsyaml.load(match[1]);
+                    const markdownContent = match[2];
+                    
+                    if (!frontmatter.title || !frontmatter.date) {
+                        console.warn(`Missing required fields (title, date) in ${filename}`);
+                        return null;
+                    }
+
+                    const processedContent = this.processMediaReferences(markdownContent);
+                    const htmlContent = marked.parse(processedContent);
+
+                    return {
+                        title: frontmatter.title,
+                        date: new Date(frontmatter.date + 'T12:00:00'),
+                        content: htmlContent,
+                        filename: filename
+                    };
+                } catch (error) {
+                    console.error(`Error parsing ${filename}:`, error);
+                    return null;
+                }
+            }
+
+            processMediaReferences(content) {
+                content = content.replace(/\[IMG:([^\]]+)\]/g, (match, filename) => {
+                    return `![](blog/assets/${filename})`;
+                });
+
+                content = content.replace(/\[AUDIO:([^\]]+)\]/g, (match, filename) => {
+                    return `<audio controls><source src="blog/assets/${filename}" type="audio/mpeg">Your browser does not support the audio element.</audio>`;
+                });
+
+                return content;
+            }
+
+            renderPosts() {
+                if (this.posts.length === 0) {
+                    this.postsContainer.innerHTML = '<div class="no-posts">No blog posts found. Add some .md files to the posts folder!</div>';
+                    return;
+                }
+
+                this.postsContainer.innerHTML = '';
+                
+                this.posts.forEach((post, index) => {
+                    const postElement = document.createElement('article');
+                    postElement.className = 'blog-post';
+                    
+                    postElement.innerHTML = `
+                        <h1 class="post-title">${post.title}</h1>
+                        <div class="post-date">${post.date.toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                        })}</div>
+                        <div class="post-content">${post.content}</div>
+                    `;
+                    
+                    this.postsContainer.appendChild(postElement);
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await NavigationLoader.renderNavigation();
+            const blogLoader = new BlogLoader();
+            blogLoader.loadPosts();
+        });
+    </script>
+</body>
+</html>

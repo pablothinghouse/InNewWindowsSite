@@ -7,44 +7,51 @@
     <link rel="icon" type="image/webp" href="assets/icons/icon.webp">
     <link rel="alternate icon" type="image/x-icon" href="assets/icons/icon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="navigation/navigation.css">
+    <script src="navigation/navigation.js"></script>
     <style>
         @font-face {
             font-family: 'Compacta BT';
             src: url('fonts/CompactaBT-Black.otf') format('opentype');
         }
-/*EDEN!!!! */
+
         body {
             margin: 0;
-            min-height: 100vh;
+            height: 100vh;
             background: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-family: 'Compacta BT', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
         }
 
         .content {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
             opacity: 0;
             animation: fadeIn 0.5s ease-in forwards;
-            padding-bottom: 1rem;
+            flex: 1;
+            justify-content: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            max-width: 100vw;
+            box-sizing: border-box;
         }
 
         .main-image {
             max-width: 800px;
             width: 100%;
+            height: auto;
         }
 
         .buttons {
             display: flex;
             gap: 2rem;
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
             max-width: 800px;
-            padding-left: 1rem;
         }
 
         .button {
@@ -53,13 +60,6 @@
             gap: 8px;
             text-decoration: none;
             transition: all 0.2s ease;
-        }
-
-        .buttons:first-of-type .button {
-            flex: 1;
-        }
-
-        .buttons:last-of-type .button {
             flex: 1;
         }
 
@@ -68,6 +68,7 @@
             height: 3rem;
             color: white;
             font-size: 3rem;
+            flex-shrink: 0;
         }
 
         .button-text {
@@ -80,6 +81,9 @@
             letter-spacing: 0.05em;
             transform: scaleX(0.8);
             text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .button-text span {
@@ -111,34 +115,6 @@
             to { opacity: 1; }
         }
 
-        @media (max-width: 768px) {
-            .content {
-                width: 100%;
-                padding: 2rem;
-                min-height: 100vh;
-                justify-content: space-between;
-            }
-
-            .main-image {
-                width: 100%;
-            }
-
-            .buttons {
-                flex-direction: column;
-                align-items: center;
-                width: 95%;
-                gap: 1rem;
-                padding-left: 2rem;
-                padding-right: 1rem;
-            }
-
-            .buttons:first-of-type .button,
-            .buttons:last-of-type .button {
-                width: 100%;
-                max-width: 500px;
-            }
-        }
-
         .button img.icon {
             width: auto;
             height: 3rem;
@@ -148,54 +124,96 @@
             image-rendering: crisp-edges;
         }
 
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
         .outdated-text {
             color: gray;
             font-size: 1.2rem;
-            margin-top: -1rem;
+            margin-top: 0.5rem;
             align-self: flex-end;
-            margin-right: 5.5rem;
+            margin-right: 2rem;
         }
 
-        @media (max-width: 768px) {
-            .outdated-text {
-                align-self: center;
-                margin-right: 0;
-            }
-        }
-
-        .wip-text {
+        .bottom-text {
             color: #666;
             font-size: 1rem;
             text-align: center;
             width: 100%;
             padding: 0.5rem 0;
-            position: fixed;
-            bottom: 0;
+            margin-top: auto;
         }
 
         @media (max-width: 768px) {
-            .wip-text {
-                position: static;
-                margin-top: auto;
+            body {
+                overflow-x: hidden;
             }
-        }
 
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            flex: 1;
-        }
+            .content {
+                gap: 1rem;
+                padding: 1rem 0.5rem;
+                min-height: auto;
+            }
 
-        @media (max-width: 768px) {
+            .main-image {
+                max-width: 95vw;
+                width: 95vw;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                width: 95vw;
+                max-width: 95vw;
+                gap: 1rem;
+            }
+
+            .button {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .button-text {
+                font-size: 1.5rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .button-text span {
+                font-size: 1.2rem;
+            }
+
             .button-container {
                 align-items: center;
-                width: 100%;
+                width: 95vw;
+                max-width: 95vw;
+            }
+
+            .outdated-text {
+                align-self: center;
+                margin-right: 0;
+                font-size: 1rem;
+            }
+
+            .wip-text {
+                font-size: 0.9rem;
+                padding: 1rem 0.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="topnav">
+        <a href="index.html">
+            <img class="nav-logo" src="assets/InNewWindows.webp" alt="In New Windows">
+        </a>
+        <div class="nav-buttons">
+        </div>
+    </div>
     <div class="content">
         <img class="main-image" src="assets/InNewWindows.webp" alt="In New Windows">
         <div class="buttons">
@@ -212,18 +230,20 @@
                 <div class="button-text">NewGrounds</div>
             </a>
         </div>
-        <div class="buttons">
-            <a href="https://store.steampowered.com/app/2574350/Speedin_Shotgun/" class="button">
-                <i class="fa-brands fa-steam icon"></i>
-                <div class="button-text">Speedin' Shotgun <span>(Steam)</span></div>
-            </a>
-            <a href="https://nonagonn.itch.io/speedin-shotgun" class="button">
-                <i class="fa-brands fa-itch-io icon"></i>
-                <div class="button-text">Speedin' Shotgun <span>(Itch.io)</span></div>
-            </a>
+        <div class="button-container">
+            <div class="buttons">
+                <a href="https://store.steampowered.com/app/2574350/Speedin_Shotgun/" class="button">
+                    <i class="fa-brands fa-steam icon"></i>
+                    <div class="button-text">Speedin' Shotgun <span>(Steam)</span></div>
+                </a>
+                <a href="https://nonagonn.itch.io/speedin-shotgun" class="button">
+                    <i class="fa-brands fa-itch-io icon"></i>
+                    <div class="button-text">Speedin' Shotgun <span>(Itch.io)</span></div>
+                </a>
+            </div>
+            <div class="outdated-text">^super outdated.</div>
         </div>
-        <div class="outdated-text">^super outdated.</div>
-        <div class="wip-text">!!!! THIS WEBSITE IS A WORK IN PROGRESS GRAAHHH !!!!</div>
+        <div class="bottom-text">!!!! THIS WEBSITE IS A WORK IN PROGRESS GRAAHHH !!!!</div>
     </div>
 </body>
 </html> 

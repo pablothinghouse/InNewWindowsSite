@@ -16,7 +16,7 @@ Well..... Speedin' Shotgun is being *ENTIRELY* remade from the ground up.
 
 [IMG:update1angry.png]
 
-Wait wait wait! Before you give me a columbian necktie and feed me to the buzzards, hear me out for a second.
+Wait wait wait! Before you give me a Colombian necktie and feed me to the buzzards, hear me out for a second.
 
 ## Reasons
 

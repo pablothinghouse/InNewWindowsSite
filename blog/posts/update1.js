@@ -49,6 +49,8 @@ Assets can be rehauled and replaced easily.
 
 The Level Editor's main script is about 0 lines long. I haven't started working on it yet. ( Though, the Level Editor will be significantly more modular and easy for me to add new objects, data, and more. I've written code for this already, so I lied about it being 0 lines long. It works great. )
 
+Oh. And the game will likely come out faster by doing this, too.
+
 [IMG:update1ah.png]
 
 See!! Don't kill me!!!
@@ -87,5 +89,7 @@ The game's story is still being written. Main plot points, locations, and charac
 [IMG:update1end.png]
 
 Oh, and um.. If you haven't... Join the [Discord](https://discord.gg/9a9JVsw2Au)...
+
+And if you also haven't!!!! Wishlist the game on [Steam](https://store.steampowered.com/app/2574350/Speedin_Shotgun/)!!! Please!!!!! ( Screenshots do not currently reflect current development state. It will be updated with more BEAUTIFUL previews soon... )
 `
 }); 

@@ -32,9 +32,7 @@ There are MANY. I'll go over them!
 
 -The Level Editor's main script is about 1.5k lines long. I cannot deal with this shit anymore.
 
-
-
-Now, with the *NEW* project file;
+## Now, with the *NEW* project file;
 
 Fresh start. I am a MUCH better developer now.
 
@@ -80,7 +78,5 @@ I would share more, but we're going through an overhaul right now. Come back lat
 2 years huh? I can't wait to be done with this shit.
 
 [IMG:update1end.png]
-
-END
 `
 }); 

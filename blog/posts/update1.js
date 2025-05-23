@@ -80,7 +80,7 @@ This is the music folder currently. To be fair: A lot of these songs are pending
 
 ## Story
 
-The game's story is still being written. Main plot points, locations, and characters all exist, but there are finer details that need to be drawn out. I won't give any details here, but don't really expect anything that'll bring tears to your eyes. We wanted to make a fun game, and that game doesn't take itself fully seriously. That doesn't mean the story won't be all goofy. Just.. EXPECT A STORY!!! THAT WORKS!!!! ITS A STORY, OKAY!!!!
+The game's story is still being written. Main plot points, locations, and characters all exist, but there are finer details that need to be drawn out. I won't give any details here, but don't really expect anything that'll bring tears to your eyes. We wanted to make a fun game, and that game doesn't take itself fully seriously. That doesn't mean the story will be all goofy. Just.. EXPECT A STORY!!! THAT WORKS!!!! ITS A STORY, OKAY!!!!
 
 ## End
 

@@ -85,5 +85,7 @@ The game's story is still being written. Main plot points, locations, and charac
 2 years huh? I can't wait to be done with this shit.
 
 [IMG:update1end.png]
+
+Oh, and um.. If you haven't... Join the [Discord](https://discord.gg/9a9JVsw2Au)...
 `
 }); 

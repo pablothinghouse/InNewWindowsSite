@@ -3,14 +3,14 @@ title: "blog tutorial"
 date: "2025-05-23"
 ---
 
-this is a tutorial  how to use the blog
+this is a tutorial how to use the blog
 
 ## How it works
 
 To add a new blog post:
 
-1. Create a new `.md` file in the `posts` folder
-2. Add the filename to `posts.txt` in the posts folder
+1. Create a new `.md` file in the `blog/posts/` folder
+2. Add the filename to the `postFiles` array in `blog.html`
 3. Copy `template.md` to format the post correctly
 
 ## Media embeds

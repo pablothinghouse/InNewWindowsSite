@@ -189,27 +189,16 @@
             constructor() {
                 this.postsContainer = document.getElementById('blog-posts');
                 this.posts = [];
-            }
-
-            async loadPostsList() {
-                try {
-                    const response = await fetch('blog/posts/posts.txt');
-                    if (response.ok) {
-                        const content = await response.text();
-                        return content.trim().split('\n').filter(line => line.trim() !== '');
-                    }
-                } catch (error) {
-                    console.error('Could not load posts list:', error);
-                }
-                return [];
+                this.postFiles = [
+                    'sample-post.md',
+                    'blog.md'
+                ];
             }
 
             async loadPosts() {
-                const postFiles = await this.loadPostsList();
-                
-                for (const filename of postFiles) {
+                for (const filename of this.postFiles) {
                     try {
-                        const response = await fetch(`blog/posts/${filename.trim()}`);
+                        const response = await fetch(`blog/posts/${filename}`);
                         if (response.ok) {
                             const content = await response.text();
                             const post = this.parsePost(content, filename);

@@ -1,7 +1,7 @@
 window.blogPosts = window.blogPosts || [];
 window.blogPosts.push({
     title: "Speedin' Shotgun Progress Update #1",
-    date: "2025-05-27",
+    date: "2025-05-23",
     content: `## Anniversary
 
 Speedin' Shotgun is 2 years old. Hooray!

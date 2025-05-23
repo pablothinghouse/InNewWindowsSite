@@ -69,7 +69,7 @@ Fine. I'll give you a song.
 
 [AUDIO:RicoSHIT.ogg]
 
-New main theme...
+RICOCHET. New main theme...
 
 I would share more, but we're going through an overhaul right now. Come back later. And I don't want to spoil anything; there's many songs and characters!!! More than you might think!!! But you'll have to wait for the game to hear and see that!!!
 

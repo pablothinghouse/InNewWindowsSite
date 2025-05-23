@@ -76,10 +76,9 @@ I would share more, but we're going through an overhaul right now. Come back lat
 [IMG:music.png]
 This is the music folder currently. To be fair: A lot of these songs are pending rework or unfinished. But they're still songs, and I hope this reflects what we have planned.
 
-## Story..???
+## Story
 
-The game's story is still being written. Main plot points, locations, and characters all exist, but there are finer details that need to be drawn out. I won't give any details here, but don't really expect anything that'll bring tears to your eyes.
-We wanted to make a fun game, and that game doesn't take itself fully seriously. That doesn't mean the story won't be all goofy. Just.. EXPECT A STORY!!! THAT WORKS!!!! ITS A STORY, OKAY!!!!
+The game's story is still being written. Main plot points, locations, and characters all exist, but there are finer details that need to be drawn out. I won't give any details here, but don't really expect anything that'll bring tears to your eyes. We wanted to make a fun game, and that game doesn't take itself fully seriously. That doesn't mean the story won't be all goofy. Just.. EXPECT A STORY!!! THAT WORKS!!!! ITS A STORY, OKAY!!!!
 
 ## End
 

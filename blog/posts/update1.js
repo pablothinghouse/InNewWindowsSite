@@ -74,7 +74,7 @@ RICOCHET. New main theme...
 I would share more, but we're going through an overhaul right now. Come back later. And I don't want to spoil anything; there's many songs and characters!!! More than you might think!!! But you'll have to wait for the game to hear and see that!!!
 
 [IMG:music.png]
-This is the music folder currently. To be fair: A lot of these songs are pending rework or unfinished. But they're still songs, and I hope this reflects what we have planned.
+This is the music folder currently. To be fair: A lot of these songs are pending rework or unfinished. But they're still songs, and I hope this reflects what we have planned (And much more!).
 
 ## Story
 

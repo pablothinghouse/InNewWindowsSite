@@ -13,8 +13,7 @@
     <script src="navigation/navigation.js"></script>
 
     <!-- ADD BLOG POST FILENAMES HERE ---------------------------- -->
-    <script src="blog/posts/sample-post.js"></script>
-    <script src="blog/posts/blog.js"></script>
+    <script src="blog/posts/john.js"></script>
 
     <style>
         @font-face {
@@ -246,7 +245,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
-            await NavigationLoader.renderNavigation();
             const blogLoader = new BlogLoader();
             blogLoader.loadPosts();
         });

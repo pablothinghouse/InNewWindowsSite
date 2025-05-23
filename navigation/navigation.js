@@ -39,6 +39,16 @@ class NavigationLoader {
     }
 
     static setupMobileMenu(navItems, currentPage) {
+        const existingMobileButton = document.querySelector('.mobile-menu-button');
+        const existingSlideoverMenu = document.querySelector('.slideover-menu');
+        
+        if (existingMobileButton) {
+            existingMobileButton.remove();
+        }
+        if (existingSlideoverMenu) {
+            existingSlideoverMenu.remove();
+        }
+
         const mobileMenuButton = document.createElement('button');
         mobileMenuButton.className = 'mobile-menu-button';
         mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';

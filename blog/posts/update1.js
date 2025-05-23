@@ -22,7 +22,7 @@ Wait wait wait! Before you give me a Colombian necktie and feed me to the buzzar
 
 There are MANY. I'll go over them!
 
--The original project file is TWO YEARS OLD. ( I have progressed as developer significantly since then. )
+-The original project file is TWO YEARS OLD. ( I have progressed as a developer significantly since then. )
 
 -The current codebase isn't modular at all and very hard to work with.
 
@@ -34,20 +34,20 @@ There are MANY. I'll go over them!
 
 ## Now, with the *NEW* project file;
 
-Fresh start. I am a MUCH better developer now.
+-Fresh start. I am a MUCH better developer now.
 
-The new codebase can be developed to be modular and easy to work with. ( Significant progress on this has already been made. )
+-The new codebase can be developed to be modular and easy to work with. ( Significant progress on this has already been made. )
 
-Controller support has already been implemented. See for yourself!
+-Controller support has already been implemented. See for yourself!
 
 [IMG:controller.gif]
 ..Ignore the visuals. T-They're temporary... Joe will be back soon.
 [IMG:myson.png]
 ..Isn't he beautiful?
 
-Assets can be rehauled and replaced easily.
+-Assets can be rehauled and replaced easily.
 
-The Level Editor's main script is about 0 lines long. I haven't started working on it yet. ( Though, the Level Editor will be significantly more modular and easy for me to add new objects, data, and more. I've written code for this already, so I lied about it being 0 lines long. It works great. )
+-The Level Editor's main script is about 0 lines long. I haven't started working on it yet. ( Though, the Level Editor will be significantly more modular and easy for me to add new objects, data, and more. I've written code for this already, so I lied about it being 0 lines long. It works great. )
 
 Oh. And the game will likely come out faster by doing this, too.
 

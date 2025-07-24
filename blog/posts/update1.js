@@ -87,9 +87,5 @@ The game's story is still being written. Main plot points, locations, and charac
 2 years huh? I can't wait to be done with this shit.
 
 [IMG:update1end.png]
-
-Oh, and um.. If you haven't... Join the [Discord](https://discord.gg/9a9JVsw2Au)...
-
-And if you also haven't!!!! Wishlist the game on [Steam](https://store.steampowered.com/app/2574350/Speedin_Shotgun/)!!! Please!!!!! ( Screenshots do not currently reflect current development state. It will be updated with more BEAUTIFUL previews soon... )
 `
 }); 

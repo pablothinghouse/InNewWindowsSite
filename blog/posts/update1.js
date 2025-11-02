@@ -61,7 +61,7 @@ Well.... We don't know. Maybe 1 year? Maybe 2 years? Maybe 527 years? If I knew,
 
 But, we have goals!
 
-The DEMO is intended to release by the end of the year.
+The DEMO is intended to release whenever it's done. Fuck you.
 
 The FULL GAME is intended to release whenever it's done. Fuck you.
 

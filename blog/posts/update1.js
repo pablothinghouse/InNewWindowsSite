@@ -16,7 +16,7 @@ Well..... Speedin' Shotgun is being *ENTIRELY* remade from the ground up.
 
 [IMG:update1angry.png]
 
-Wait wait wait! Before you give me a Colombian necktie and feed me to the buzzards, hear me out for a second.
+Wait wait wait! Hear me out for a second...
 
 ## Reasons
 
@@ -34,7 +34,7 @@ There are MANY. I'll go over them!
 
 ## Now, with the *NEW* project file;
 
--Fresh start. I am a MUCH better developer now.
+-Fresh start.
 
 -The new codebase can be developed to be modular and easy to work with. ( Significant progress on this has already been made. )
 
@@ -53,7 +53,7 @@ Oh. And the game will likely come out faster by doing this, too.
 
 [IMG:update1ah.png]
 
-See!! Don't kill me!!!
+See!! I was right!!
 
 ## When
 
@@ -61,13 +61,15 @@ Well.... We don't know. Maybe 1 year? Maybe 2 years? Maybe 527 years? If I knew,
 
 But, we have goals!
 
-The DEMO is intended to release whenever it's done. Fuck you.
+The DEMO is intended to release whenever it's done.
 
-The FULL GAME is intended to release whenever it's done. Fuck you.
+The FULL GAME is intended to release whenever it's done.
+
+Things like this take time, and we have no clear idea! Considering we're actively developing another project as well...
 
 ## That's it??? Nothing new???
 
-Fine. I'll give you a song.
+I'll give you a song!
 
 [AUDIO:Ricochet.ogg]
 
@@ -84,7 +86,7 @@ The game's story is still being written. Main plot points, locations, and charac
 
 ## End
 
-2 years huh? I can't wait to be done with this shit.
+2 years huh? Can't wait for you all to see what we've been making.
 
 [IMG:update1end.png]
 `

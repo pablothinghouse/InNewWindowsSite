@@ -30,7 +30,7 @@ There are MANY. I'll go over them!
 
 -A lot of assets were outdated, and needed a rehaul anyways.
 
--The Level Editor's main script is about 1.5k lines long. I cannot deal with this shit anymore.
+-The Level Editor's main script is about 1.5k lines long. I cannot deal with this anymore man.
 
 ## Now, with the *NEW* project file;
 
